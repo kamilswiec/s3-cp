@@ -1,0 +1,25 @@
+name: S3-copy
+description: S3 cp command with optional credentials using aws-cli-v2
+author: kamilswiec
+runs:
+  using: docker
+  image: Dockerfile
+inputs:
+  source:
+    description: "Source - host or s3 uri."
+    required: true
+  destination:
+    description: "Destination - host or s3 uri. Defaults to current directory."
+    required: false
+  aws_access_key_id:
+    description: "The AWS access key part of your credentials. More info: https://docs.aws.amazon.com/cli/latest/reference/configure/"
+    required: false
+  aws_access_secret_key:
+    description: "The AWS access secret part of your credentials. More info: https://docs.aws.amazon.com/cli/latest/reference/configure/"
+    required: false
+  aws_region:
+    description: "Region for AWS config. Defaults to eu-east-1"
+    required: false
+branding:
+  icon: refresh-cw
+  color: orange
